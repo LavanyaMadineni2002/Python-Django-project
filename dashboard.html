@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'Dashboard.css' %}">
+</head>
+<body>
+<script src="Dashboard.js"></script>
+
+<h1>Dashboard</h1>
+
+<!-- User Data -->
+<h2>User Data</h2>
+<ul>
+    {% for user in users %}
+        <li>{{ user.name }} - ({{ user.email }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Account Data -->
+<h2>Account Data</h2>
+<ul>
+    {% for account in accounts %}
+        <li>{{ account.user }} - {{ account.account_name}} - {{ account.account_type }} - ({{ account.balance }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Transaction Data -->
+<h2>Transaction Data</h2>
+<ul>
+    {% for transaction in transactions %}
+        <li>{{ transaction.account }} - {{ transaction.date }} - {{ transaction.description }} - ({{ transaction.amount }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Budget Data -->
+<h2>Budget Data</h2>
+<ul>
+    {% for budget in budgets %}
+        <li>{{ budget.user }} - {{ budget.name }} - {{ budget.amount }} - ({{ budget.budget_type }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Investment Data -->
+<h2>Investment Data</h2>
+<ul>
+    {% for investment in investments %}
+        <li>{{ investment.user }} - {{ investment.name }} - {{ investment.amount }} - ({{ investment.investment_type }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Debt Data -->
+<h2>Debt Data</h2>
+<ul>
+    {% for debt in debts %}
+        <li>{{ debt.user }} - {{ debt.name }} - {{ debt.amount }} - ({{ debt.debt_type }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Credit Score Data -->
+<h2>Credit Score Data</h2>
+<ul>
+    {% for credit_score in credit_scores %}
+        <li>{{ credit_score.user }} - ({{ credit_score.credit_score }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Financial Goal Data -->
+<h2>Financial Goal Data</h2>
+<ul>
+    {% for financial_goal in financial_goals %}
+        <li>{{ financial_goal.user }} - {{ financial_goal.name }} - {{ financial_goal.amount }} - ({{ financial_goal.goal_type }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Bill Reminder Data -->
+<h2>Bill Reminder Data</h2>
+<ul>
+    {% for bill_reminder in bill_reminders %}
+        <li>{{ bill_reminder.user }} - {{ bill_reminder.bill_name }} - ({{ bill_reminder.due_date }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Report Data -->
+<h2>Report Data</h2>
+<ul>
+    {% for report in reports %}
+        <li>{{ report.user }} - {{ report.name }} - {{ report.data }} - ({{ report.report_type }})</li>
+    {% endfor %}
+</ul>
+
+<!-- Image Section -->
+<h2>Images</h2>
+<ul>
+    {% for image in images %}
+    <li>{{ image.image }} - {{ image.caption }} - ({{ image.upload_at}})</li>
+    {% endfor %}
+</ul>
+
+<!-- Video Section -->
+<h2>Videos</h2>
+<ul>
+    {% for video in videos %}
+    <li>{{ video.video }} - {{ video.title }} - {{ video.description }} - ({{ video.upload_at}})</li>
+    {% endfor %}
+</ul>
+
+<!-- Audio Section -->
+<h2>Audios</h2>
+<ul>
+    {% for audio in audios %}
+    <li>{{ audio.audio }} - {{ audio.title  }} - {{ audio.description }} - ({{ audio.upload_at}})</li>
+
+    {% endfor %}
+</ul>
+
+<!-- Document Section -->
+<h2>Documents</h2>
+<ul>
+    {% for document in documents %}
+    <li>{{ document.document }} - {{ document.title  }} - {{ document.description }} - ({{ document.upload_at}})</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
